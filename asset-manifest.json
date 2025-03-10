@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/danielle-birthday-website/static/css/main.96ca761d.css",
+    "main.js": "/danielle-birthday-website/static/js/main.5fb750d9.js",
+    "static/js/453.30d1526e.chunk.js": "/danielle-birthday-website/static/js/453.30d1526e.chunk.js",
+    "index.html": "/danielle-birthday-website/index.html",
+    "main.96ca761d.css.map": "/danielle-birthday-website/static/css/main.96ca761d.css.map",
+    "main.5fb750d9.js.map": "/danielle-birthday-website/static/js/main.5fb750d9.js.map",
+    "453.30d1526e.chunk.js.map": "/danielle-birthday-website/static/js/453.30d1526e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.96ca761d.css",
+    "static/js/main.5fb750d9.js"
+  ]
+}
