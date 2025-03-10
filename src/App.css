@@ -52,7 +52,8 @@
 .App-header {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,6 +63,8 @@
   padding: 15px;
   position: relative;
   z-index: 2;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .App-link {
@@ -80,24 +83,26 @@
 h1 {
   color: #ff6b6b;
   font-family: 'Segoe UI', 'Roboto', sans-serif;
-  font-size: 2.8rem;
-  margin-bottom: 1.5rem;
+  font-size: min(2.8rem, 8vw);
+  margin: 1rem;
+  padding: 0 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   background: linear-gradient(45deg, #ff6b6b, #ffd93d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+  word-wrap: break-word;
+  max-width: 100%;
 }
 
 .card {
   background: rgba(255, 255, 255, 0.95);
-  padding: 1rem;
+  padding: clamp(0.8rem, 2vw, 1.2rem);
   border-radius: 15px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   margin: 0.7rem;
-  max-width: 800px;
-  width: 90%;
+  width: min(800px, 90%);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -105,22 +110,25 @@ p {
   font-family: 'Segoe UI', 'Roboto', sans-serif;
   color: #555;
   margin: 0;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   line-height: 1.4;
+  padding: 0 0.5rem;
 }
 
 .image-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 1.5rem;
-  padding: 1rem;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(0.5rem, 2vw, 1rem);
+  width: 100%;
+  max-width: 1200px;
 }
 
 .animated-image {
-  width: 200px;
-  height: 200px;
+  width: min(200px, 45vw);
+  height: min(200px, 45vw);
   object-fit: cover;
   border-radius: 15px;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
@@ -136,23 +144,42 @@ p {
 }
 
 @media (max-width: 768px) {
+  .App-header {
+    padding: 10px;
+  }
+
   h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    font-size: 6vw;
+    margin: 0.8rem;
   }
 
   p {
-    font-size: 0.9rem;
-  }
-
-  .animated-image {
-    width: 150px;
-    height: 150px;
+    font-size: 4vw;
   }
 
   .card {
     padding: 0.8rem;
-    max-width: 95%;
     margin: 0.5rem;
+    width: 95%;
+  }
+
+  .image-container {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 7vw;
+  }
+
+  p {
+    font-size: 4.5vw;
+  }
+
+  .animated-image {
+    width: min(150px, 80vw);
+    height: min(150px, 80vw);
   }
 }
